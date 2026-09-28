@@ -162,6 +162,12 @@ The investigation was supported by screenshots and command outputs collected dur
 | Functional Audio Test | Verified normal audio playback after restarting the notebook. | ✅ |
 | Overnight Sleep Test | Confirmed that audio continued working after resuming from sleep mode the following day. | ✅ |
 
+### Evidence 1 — Power Management
+
+The `powercfg /a` command was used to identify the sleep states supported and unavailable on the system.
+
+![Power Management](images/01-powercfg-a.png.png)
+
 ## References
 
 - Microsoft Learn — Device Manager documentation
