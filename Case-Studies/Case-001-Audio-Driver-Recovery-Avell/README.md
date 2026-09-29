@@ -54,13 +54,43 @@ Confirm whether Windows was correctly detecting the installed audio hardware.
 
 Opened Device Manager and inspected all audio devices, drivers, and hardware status.
 
+### Device Manager — Initial State
+
+The Device Manager was inspected to verify how Windows was detecting the audio hardware and which driver was currently being used.
+
+![Device Manager - Before](images/02-device-manager-before.png.png)
+
 **Result**
 
 Windows successfully detected the audio hardware, and no warning icons or hardware errors were present.
 
+### Driver Properties — Initial State
+
+The audio device properties were inspected to identify the driver provider and other relevant driver information.
+
+![Driver Properties - Before](images/03-driver-properties-before.png.png)
+
+### Driver Files — Initial State
+
+The installed driver files were inspected to further verify the driver configuration before making any changes.
+
+![Driver Files - Before](images/04-driver-files-before.png.png)
+
 **Decision**
 
 Since the hardware was correctly detected, the investigation shifted to the installed audio driver.
+
+### Realtek Driver Store
+
+The system driver store was inspected to identify the available Realtek driver components before the corrective action.
+
+![Realtek Driver Store](images/05-realtek-driver-store.png.png)
+
+### THX Driver Store
+
+The system driver store was also inspected to identify the installed THX audio components associated with the notebook.
+
+![THX Driver Store](images/06-thx-driver-store.png.png)
 
 ---
 
@@ -103,6 +133,24 @@ Installing the official Realtek OEM driver restored proper communication between
 | 5 | Verified the installed driver information in Device Manager. | Confirm that the OEM driver was correctly installed. |
 | 6 | Performed functional audio tests after reboot. | Validate that audio playback was restored. |
 | 7 | Performed an overnight sleep and resume test. | Confirm that the issue no longer occurred after resuming from sleep mode. |
+
+### Driver Backup
+
+Before modifying the driver configuration, a backup of the installed drivers was created using `pnputil`.
+
+![Driver Backup - Success](images/07-driver-backup-success.png.png)
+
+### Driver Installation — Reboot Required
+
+After the driver installation, Windows indicated that a restart was required to complete the hardware and driver changes.
+
+![Hardware Change Requires Reboot](images/08-hardware-change-requires-reboot.png.png)
+
+### Driver Backup Confirmation
+
+The driver backup operation was confirmed successfully before proceeding with the driver changes.
+
+![Driver Backup - Success](images/09-driver-backup-success.png.png)
 
 ## Validation
 
