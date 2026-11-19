@@ -21,6 +21,8 @@ The environment was successfully validated through a local database connection a
 | Port | 3306 |
 | Database Account | root |
 
+![MySQL Workbench Home](images/01-mysql-workbench-home.png)
+
 ## Initial Issue
 
 When accessing the administration features in MySQL Workbench, the following error appeared:
@@ -30,6 +32,8 @@ When accessing the administration features in MySQL Workbench, the following err
 The error also indicated an operating system mismatch between the configured target host and the detected environment.
 
 At this stage, it was necessary to determine whether MySQL Server was installed and running correctly.
+
+![Initial Administration Error](images/02-initial-administration-error.png)
 
 ## Investigation
 
@@ -50,6 +54,8 @@ Initial observations:
 
 The service was manually started and its status changed to Running.
 
+![MySQL80 Windows Service](images/03-windows-mysql80-service.png)
+
 ### 2. MySQL Workbench Connection Test
 
 Inspected the existing connection:
@@ -58,11 +64,16 @@ Inspected the existing connection:
 
 Verified the connection using the existing localhost configuration.
 
+![MySQL Server Connection Settings](images/04-server-connection-settings.png)
+
 The connection test returned:
 
 `Successfully made the MySQL connection.`
 
 This confirmed that MySQL Workbench could authenticate and communicate with the local MySQL Server.
+
+
+![Successful MySQL Connection](images/05-mysql-connection-success.png)
 
 ## Troubleshooting and Resolution
 
@@ -73,6 +84,8 @@ The Server Status page opened without displaying the original administration acc
 No changes to the server installation were necessary.
 
 The original error's root cause was not conclusively identified.
+
+![MySQL Server Status](images/06-mysql-server-status.png)
 
 ## Validation
 
@@ -87,6 +100,8 @@ SELECT VERSION();
 **Result:**
 
 The query executed successfully and returned MySQL version 8.0.x.
+
+![MySQL Version Query Result](images/07-sql-version-query.png)
 
 This validated:
 
